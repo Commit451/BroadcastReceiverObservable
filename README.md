@@ -1,5 +1,5 @@
 # BroadcastReceiverObservable
-Turn a BroadCastReceiver into an Observable
+Turn a `BroadcastReceiver` into an RxJava `Observable`
 
 [![Build Status](https://travis-ci.org/Commit451/BroadcastReceiverObservable.svg?branch=master)](https://travis-ci.org/Commit451/BroadcastReceiverObservable) [![](https://jitpack.io/v/Commit451/BroadcastReceiverObservable.svg)](https://jitpack.io/#Commit451/BroadcastReceiverObservable)
 
