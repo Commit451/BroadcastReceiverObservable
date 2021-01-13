@@ -29,12 +29,12 @@ BroadcastReceiverObservable.create(context, filter)
 It is recommended that you use some method to cancel the subscription when the activity or fragment is destroyed so that the `BroadcastReceiver` gets unregistered. [RxLifecycle](https://github.com/trello/RxLifecycle) is a great tool for this.
 
 # Acknowledgements
-BroadcastReceiverObservable was inspired by [rxnetwork-android](https://github.com/Laimiux/rxnetwork-android) and modified a bit to make it work with RxJava 2.
+BroadcastReceiverObservable was inspired by [rxnetwork-android](https://github.com/Laimiux/rxnetwork-android) and modified a bit to make it work with RxJava 3.
 
 License
 --------
 
-    Copyright 2017 Commit 451
+    Copyright 2021 Commit 451
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

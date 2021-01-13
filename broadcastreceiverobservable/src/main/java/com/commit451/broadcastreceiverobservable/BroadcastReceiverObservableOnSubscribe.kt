@@ -5,10 +5,15 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Handler
-import io.reactivex.ObservableEmitter
-import io.reactivex.ObservableOnSubscribe
+import io.reactivex.rxjava3.core.ObservableEmitter
+import io.reactivex.rxjava3.core.ObservableOnSubscribe
 
-internal class BroadcastReceiverObservableOnSubscribe(private val context: Context, private val intentFilter: IntentFilter, private val broadcastPermission: String? = null, private val schedulerHandler: Handler? = null) : ObservableOnSubscribe<Intent> {
+internal class BroadcastReceiverObservableOnSubscribe(
+        private val context: Context,
+        private val intentFilter: IntentFilter,
+        private val broadcastPermission: String? = null,
+        private val schedulerHandler: Handler? = null
+) : ObservableOnSubscribe<Intent> {
 
     override fun subscribe(e: ObservableEmitter<Intent>) {
         val broadcastReceiver = object : BroadcastReceiver() {

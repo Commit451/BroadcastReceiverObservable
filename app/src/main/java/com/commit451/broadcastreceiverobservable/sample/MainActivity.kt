@@ -5,11 +5,11 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.commit451.broadcastreceiverobservable.BroadcastReceiverObservable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val text = findViewById<TextView>(R.id.text)
 
         BroadcastReceiverObservable.create(context, filter)
-                .startWith(Intent())
+                .startWithItem(Intent())
                 .map {
                     status(context)
                 }
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 }
     }
 
-    fun status(context: Context): Boolean {
+    private fun status(context: Context): Boolean {
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork = cm.activeNetworkInfo
         return null != activeNetwork && activeNetwork.isConnected
